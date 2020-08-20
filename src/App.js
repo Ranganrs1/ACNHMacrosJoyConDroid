@@ -1262,6 +1262,134 @@ class BreedingMacroBuilder extends MacroBuilder {
 	}
 }
 
+class CraftingMacroBuilder extends MacroBuilder {
+	constructor(jsonM) {
+		super(jsonM, "Crafting", "./images/wonderbox_icon.png");
+
+		/*this.parameters.count    = 1;
+		this.parameters.waitTime = 25;
+
+		this.onCountChange    = this.onCountChange.bind(this);
+		this.onWaitTimeChange = this.onWaitTimeChange.bind(this);
+
+		this.paramHandlers = {
+			count  : this.onCountChange,
+			waitTime : this.onWaitTimeChange
+		};
+		*/
+		var text1 = (
+			<p>
+				Give Tom Nook 4 million Bells now and he might consider sparing your villagers.
+			</p>
+		);
+
+		var text2 = (
+			<p>
+				Mr. Nook will be here soon. <small>soon.</small>
+			</p>
+		);
+
+		this.info = [
+			{
+				title: "Hostage Demand",
+				text: text1
+			},
+			{
+				title: "Warning",
+				text: text2
+			}
+		];
+	}
+
+	// Parameter Handlers
+	/*onCountChange(count) {
+		if(this.parameters.count !== count) {
+			this.parameters.count = count;
+
+			return true;
+		}
+
+		return false;
+	}
+
+	onWaitTimeChange(time) {
+		if(this.parameters.waitTime !== time) {
+			this.parameters.waitTime = time;
+
+			return true;
+		}
+
+		return false;
+	}
+	*/
+
+	/*
+	// Build Macro
+	SelectInBox(column, row) {
+		var segments = this.getMacro("SelectInBox");
+
+		let dx = column;
+		let dy = row;
+
+		if(dx > 0) {
+			segments[0].macro[0].count = dx;
+		}
+		else {
+			segments[0].macro[1].count = -1 * dx;
+		}
+
+		if(dy > 0) {
+			segments[0].macro[2].count = dy;
+		}
+		else {
+			segments[0].macro[3].count = -1 * dy;
+		}
+
+		this.concatToMacro(segments);
+	}
+
+	ConcludeTrade() {
+		var segments = this.getMacro("EndWonder");
+
+		segments[0].macro[2].offTime = this.parameters.waitTime * 1000;
+
+		this.concatToMacro(segments);
+	}
+	*/
+	build() {
+		if(!this.jsonManager.loadConcluded) return null;
+
+		this.macroJSON = []; // Clear Macro JSON
+		/*
+		var count  = 0;
+		var row    = 0;
+		var column = 0;
+
+		for(; row < 5; row++) {
+			for(column = 0; column < 6; column++) {
+				this.concatToMacro(this.getMacro("StartWonder"));
+
+				this.SelectInBox(column, row);
+
+				this.ConcludeTrade();
+
+				count++;
+				if(count >= this.parameters.count) {
+					break;
+				}
+			}
+
+			if(count >= this.parameters.count) {
+				break;
+			}
+		}
+		*/
+		this.concatToMacro(this.getMacro("Crafting"));
+		this.macro = new Macro(this.name, this.icon, this.macroJSON);
+
+		return this.macro;
+	}
+}
 //
 // - APP Components
 //
@@ -1472,7 +1600,7 @@ class MacroPlayer {
 		this.builders = [];
 		this.builders[0] = new TimeSkipMacroBuilder(this.jsonManager);
 		this.builders[1] = new LotoIDMacroBuilder(this.jsonManager);
-		this.builders[2] = new WonderBoxMacroBuilder(this.jsonManager);
+		this.builders[2] = new CraftingMacroBuilder(this.jsonManager);
 		this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
 
 		let macroCount = this.builders.length;
