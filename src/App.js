@@ -46,7 +46,7 @@ function generateButtonPress(button, onTime, offTime, count) {
 }
 
 function generateJoystickPush(side, onTime, offTime, strength, angle) {
-	if(side != "left" && side != "right") return [];
+	if(side !== "left" && side !== "right") return [];
 
 	return [
 		{
@@ -781,7 +781,8 @@ class LotoIDMacroBuilder extends MacroBuilder {
 	}
 }
 
-class WonderBoxMacroBuilder extends MacroBuilder {
+/*class WonderBoxMacroBuilder extends MacroBuilder {
+
 	constructor(jsonM) {
 		super(jsonM, "Wonder Box", "./images/wonderbox_icon.png");
 
@@ -1261,6 +1262,7 @@ class BreedingMacroBuilder extends MacroBuilder {
 		return this.macro;
 	}
 }
+*/
 
 class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
