@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ACNHMacrosJoyConDroid/static/css/main.7cfc4ed1.chunk.css",
-    "main.js": "/ACNHMacrosJoyConDroid/static/js/main.d4f93eef.chunk.js",
-    "main.js.map": "/ACNHMacrosJoyConDroid/static/js/main.d4f93eef.chunk.js.map",
+    "main.css": "/ACNHMacrosJoyConDroid/static/css/main.8e67fa32.chunk.css",
+    "main.js": "/ACNHMacrosJoyConDroid/static/js/main.41d42353.chunk.js",
+    "main.js.map": "/ACNHMacrosJoyConDroid/static/js/main.41d42353.chunk.js.map",
     "runtime-main.js": "/ACNHMacrosJoyConDroid/static/js/runtime-main.27651643.js",
     "runtime-main.js.map": "/ACNHMacrosJoyConDroid/static/js/runtime-main.27651643.js.map",
-    "static/js/2.950c97e1.chunk.js": "/ACNHMacrosJoyConDroid/static/js/2.950c97e1.chunk.js",
-    "static/js/2.950c97e1.chunk.js.map": "/ACNHMacrosJoyConDroid/static/js/2.950c97e1.chunk.js.map",
+    "static/js/2.926e165f.chunk.js": "/ACNHMacrosJoyConDroid/static/js/2.926e165f.chunk.js",
+    "static/js/2.926e165f.chunk.js.map": "/ACNHMacrosJoyConDroid/static/js/2.926e165f.chunk.js.map",
     "index.html": "/ACNHMacrosJoyConDroid/index.html",
-    "precache-manifest.3444a8f3c35754198510a58c0a0d5b31.js": "/ACNHMacrosJoyConDroid/precache-manifest.3444a8f3c35754198510a58c0a0d5b31.js",
+    "precache-manifest.53019fcffa99ba539a7da7e2cc4ec73f.js": "/ACNHMacrosJoyConDroid/precache-manifest.53019fcffa99ba539a7da7e2cc4ec73f.js",
     "service-worker.js": "/ACNHMacrosJoyConDroid/service-worker.js",
-    "static/css/main.7cfc4ed1.chunk.css.map": "/ACNHMacrosJoyConDroid/static/css/main.7cfc4ed1.chunk.css.map",
-    "static/js/2.950c97e1.chunk.js.LICENSE": "/ACNHMacrosJoyConDroid/static/js/2.950c97e1.chunk.js.LICENSE"
+    "static/css/main.8e67fa32.chunk.css.map": "/ACNHMacrosJoyConDroid/static/css/main.8e67fa32.chunk.css.map",
+    "static/js/2.926e165f.chunk.js.LICENSE": "/ACNHMacrosJoyConDroid/static/js/2.926e165f.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.27651643.js",
-    "static/js/2.950c97e1.chunk.js",
-    "static/css/main.7cfc4ed1.chunk.css",
-    "static/js/main.d4f93eef.chunk.js"
+    "static/js/2.926e165f.chunk.js",
+    "static/css/main.8e67fa32.chunk.css",
+    "static/js/main.41d42353.chunk.js"
   ]
 }
