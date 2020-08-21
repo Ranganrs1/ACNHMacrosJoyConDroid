@@ -5,8 +5,8 @@
             {
                 "button"  : "a",
                 "onTime"  : 100,
-                "offTime" : 100,
-                "count"   : 10
+                "offTime" : 50,
+                "count"   : 200
             }
         ],
         "count": 1
