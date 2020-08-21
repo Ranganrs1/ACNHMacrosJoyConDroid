@@ -1603,7 +1603,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
 		super(jsonM, "Crafting", "./images/wonderbox_icon.png");
 
-		/*this.parameters.count    = 1;
+		this.parameters.count    = 1;
 		this.parameters.waitTime = 25;
 
 		this.onCountChange    = this.onCountChange.bind(this);
@@ -1613,7 +1613,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 			count  : this.onCountChange,
 			waitTime : this.onWaitTimeChange
 		};
-		*/
+		
 		var text1 = (
 			<p>
 				Give Tom Nook 4 million Bells now and he might consider sparing your villagers.
@@ -1639,7 +1639,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 	}
 
 	// Parameter Handlers
-	/*onCountChange(count) {
+	onCountChange(count) {
 		if(this.parameters.count !== count) {
 			this.parameters.count = count;
 
@@ -1658,7 +1658,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 
 		return false;
 	}
-	*/
+	
 
 	/*
 	// Build Macro
