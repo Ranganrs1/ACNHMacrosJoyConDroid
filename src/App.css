@@ -58,8 +58,8 @@ html, body {
 }
 
 .macro-button {
-    background-color: #FFFFFF;
-    color: white;
+    background-color: #F5F7E1;
+    color: #A09583;
     width: 8vh;
     height: 8vh;
     border-radius: 50%;
@@ -90,7 +90,7 @@ html, body {
     flex-flow: column nowrap;
     align-content: space-between;
     margin: auto;
-    background-color: #b7b7b7;
+    background-color: #FFF9E6;
 }
 
 .parameters-entry {
@@ -161,7 +161,7 @@ html, body {
 }
 
 .filler {
-    background: #241d92;
+    background: #53BCAE;
     height: 100%;
     border-radius: inherit;
     transition: width .2s ease-in;
@@ -299,10 +299,10 @@ html, body {
 }
 
 .text-box {
-  background-color: #FFFFFF;
+  background-color: #F7F4E5;
   width: 70%;
   height: max-content;
   padding: 5% 5%;
-  color: #000;
+  color: #737061;
   overflow: hidden;
 }
