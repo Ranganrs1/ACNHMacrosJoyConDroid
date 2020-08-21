@@ -45,7 +45,7 @@ function generateButtonPress(button, onTime, offTime, count) {
 	];
 }
 
-/*function generateJoystickPush(side, onTime, offTime, strength, angle) {
+function generateJoystickPush(side, onTime, offTime, strength, angle) {
 	if(side !== "left" && side !== "right") return [];
 
 	return [
@@ -64,7 +64,7 @@ function generateButtonPress(button, onTime, offTime, count) {
 			count: 1
 		}
 	];
-}*/
+}
 
 //
 // - React Components
@@ -1264,7 +1264,7 @@ class BreedingMacroBuilder extends MacroBuilder {
 }
 */
 
-/*class EggHatcherMacroBuilder extends MacroBuilder {
+class EggHatcherMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
 		super(jsonM, "Egg Hatcher", "./images/egghatcher_icon.png");
 
@@ -1455,7 +1455,7 @@ class BreedingMacroBuilder extends MacroBuilder {
 		return this.macro;
 	}
 }
-*/
+
 /*class BreedingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
 		super(jsonM, "Breeding", "./images/egghatcher_icon.png");
@@ -1936,7 +1936,7 @@ class MacroPlayer {
 		this.builders[0] = new TimeSkipMacroBuilder(this.jsonManager);
 		this.builders[1] = new LotoIDMacroBuilder(this.jsonManager);
 		this.builders[2] = new CraftingMacroBuilder(this.jsonManager);
-		//this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
+		this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
 
 		let macroCount = this.builders.length;
 
