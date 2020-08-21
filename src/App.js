@@ -1603,7 +1603,7 @@ class MacroPlayer {
 		this.builders[0] = new TimeSkipMacroBuilder(this.jsonManager);
 		this.builders[1] = new LotoIDMacroBuilder(this.jsonManager);
 		this.builders[2] = new CraftingMacroBuilder(this.jsonManager);
-		this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
+		//this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
 
 		let macroCount = this.builders.length;
 
