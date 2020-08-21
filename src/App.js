@@ -427,7 +427,7 @@ function coroutine(f, args) {
 	}
 }
 
-class JSONManeger {
+class JSONManager {
 	constructor() {
 		this.segments = {
 			FstSkip      : {filename: "FirstSkip.json",           object: ""},
@@ -1933,7 +1933,7 @@ class MacroPlayer {
 		};
 
 		// Create JSON Manager
-		this.jsonManager = new JSONManeger();
+		this.jsonManager = new JSONManager();
 
 		// Create Macro Builders
 		this.builders = [];
