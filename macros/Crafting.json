@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Crafting",
+        "macro": [
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 100,
+                "count"   : 10
+            }
+        ],
+        "count": 1
+    }
+]

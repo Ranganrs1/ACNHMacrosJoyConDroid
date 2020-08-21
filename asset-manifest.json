@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/PokemonMacrosJoyConDroid/static/css/main.b150884a.chunk.css",
-    "main.js": "/PokemonMacrosJoyConDroid/static/js/main.dc7fb069.chunk.js",
-    "main.js.map": "/PokemonMacrosJoyConDroid/static/js/main.dc7fb069.chunk.js.map",
-    "runtime-main.js": "/PokemonMacrosJoyConDroid/static/js/runtime-main.133016bd.js",
-    "runtime-main.js.map": "/PokemonMacrosJoyConDroid/static/js/runtime-main.133016bd.js.map",
-    "static/js/2.2830d886.chunk.js": "/PokemonMacrosJoyConDroid/static/js/2.2830d886.chunk.js",
-    "static/js/2.2830d886.chunk.js.map": "/PokemonMacrosJoyConDroid/static/js/2.2830d886.chunk.js.map",
-    "index.html": "/PokemonMacrosJoyConDroid/index.html",
-    "precache-manifest.c70a60daa69e1db59c131911284db88e.js": "/PokemonMacrosJoyConDroid/precache-manifest.c70a60daa69e1db59c131911284db88e.js",
-    "service-worker.js": "/PokemonMacrosJoyConDroid/service-worker.js",
-    "static/css/main.b150884a.chunk.css.map": "/PokemonMacrosJoyConDroid/static/css/main.b150884a.chunk.css.map",
-    "static/js/2.2830d886.chunk.js.LICENSE.txt": "/PokemonMacrosJoyConDroid/static/js/2.2830d886.chunk.js.LICENSE.txt"
+    "main.css": "/ACNHMacrosJoyConDroid/static/css/main.07f5baa9.chunk.css",
+    "main.js": "/ACNHMacrosJoyConDroid/static/js/main.2f3a9398.chunk.js",
+    "main.js.map": "/ACNHMacrosJoyConDroid/static/js/main.2f3a9398.chunk.js.map",
+    "runtime-main.js": "/ACNHMacrosJoyConDroid/static/js/runtime-main.27651643.js",
+    "runtime-main.js.map": "/ACNHMacrosJoyConDroid/static/js/runtime-main.27651643.js.map",
+    "static/js/2.926e165f.chunk.js": "/ACNHMacrosJoyConDroid/static/js/2.926e165f.chunk.js",
+    "static/js/2.926e165f.chunk.js.map": "/ACNHMacrosJoyConDroid/static/js/2.926e165f.chunk.js.map",
+    "index.html": "/ACNHMacrosJoyConDroid/index.html",
+    "precache-manifest.4523c09f208183a35e26379b64ff2c3f.js": "/ACNHMacrosJoyConDroid/precache-manifest.4523c09f208183a35e26379b64ff2c3f.js",
+    "service-worker.js": "/ACNHMacrosJoyConDroid/service-worker.js",
+    "static/css/main.07f5baa9.chunk.css.map": "/ACNHMacrosJoyConDroid/static/css/main.07f5baa9.chunk.css.map",
+    "static/js/2.926e165f.chunk.js.LICENSE": "/ACNHMacrosJoyConDroid/static/js/2.926e165f.chunk.js.LICENSE"
   },
   "entrypoints": [
-    "static/js/runtime-main.133016bd.js",
-    "static/js/2.2830d886.chunk.js",
-    "static/css/main.b150884a.chunk.css",
-    "static/js/main.dc7fb069.chunk.js"
+    "static/js/runtime-main.27651643.js",
+    "static/js/2.926e165f.chunk.js",
+    "static/css/main.07f5baa9.chunk.css",
+    "static/js/main.2f3a9398.chunk.js"
   ]
 }
