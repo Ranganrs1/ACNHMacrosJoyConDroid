@@ -28,7 +28,7 @@ async function LoadJson(path) {
 	return res;
 }
 
-function generateButtonPress(button, onTime, offTime, count) {
+/*function generateButtonPress(button, onTime, offTime, count) {
 	return [
 		{
 			name: "Press " + button,
@@ -43,7 +43,7 @@ function generateButtonPress(button, onTime, offTime, count) {
 			count: count
 		}
 	];
-}
+}*/
 
 /*function generateJoystickPush(side, onTime, offTime, strength, angle) {
 	if(side !== "left" && side !== "right") return [];
@@ -2241,7 +2241,7 @@ class App extends Component {
 				<div className = "App-header">
 					<img className = "icon" src = "./images/macro_app_icon.png" alt = "AppIcon"/>
 					<b className = "App-title"
-						style = {{color: "#FFCF25"}}> ANIMACROSSING </b>
+						style = {{color: "#FFCF25"}}> AniMacrosSing </b>
 				</div>
 				<div id = "body">
 					<div id = "Macros">
