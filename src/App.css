@@ -1,3 +1,16 @@
+:root {
+  --ac-cream: #f4f2bd; /*Custom designer background*/
+  --ac-white: #fff9e6; /*Inventory background*/
+  --ac-lgray: #f0e0c9; /*Empty inv spaces*/
+  --ac-yellow: #fece24; /*title*/
+  --ac-cyan: #2eb2a5; /*Inventory name selector*/
+  --ac-gold: #bda646; /*Bells counter*/
+  --ac-lbrown: #877561; /*Custom design editor buttons*/
+  --ac-brown: #645140; /*Custom design editor icons*/
+  --ac-pink: #fcbfc6; /*Custom design editor pink*/
+  --ac-orange: #e59469; /*diy recipe icon orange*/
+}
+
 html, body {
   height: 100vh;
   overflow: hidden;
@@ -8,7 +21,7 @@ html, body {
   text-align: center;
   height: 100vh;
   width: 100vw;
-  color: white;
+  color: var(--ac-lbrown);
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   font-family: Verdana, Geneva, sans-serif;
@@ -58,8 +71,8 @@ html, body {
 }
 
 .macro-button {
-    background-color: #F5F7E1;
-    color: #A09583;
+    background-color: var(--ac-white);
+    color: var(--ac-lbrown);
     width: 8vh;
     height: 8vh;
     border-radius: 50%;
@@ -71,7 +84,7 @@ html, body {
 
 .macro-button-label {
     display: block;
-    color: #746E60;
+    color: var(--ac-lbrown);
     font-size: 1.5vh;
     width: 100%;
     max-width: 8vh;
@@ -91,7 +104,7 @@ html, body {
     flex-flow: column nowrap;
     align-content: space-between;
     margin: auto;
-    background-color: #FFF9E6;
+    background-color: var(--ac-cream);
 }
 
 .parameters-entry {
@@ -107,15 +120,15 @@ html, body {
 .parameter-label {
     line-height: 4vh;
     width: 40%;
-    background-color: #8B9CEE;
-    color: #6B6859;
+    background-color: var(--ac-cyan);
+    color: var(--ac-brown);
     text-align: center;
 }
 
 .parameter {
     line-height: 4vh;
     width: 60%;
-    background-color: #fff;
+    background-color: var(--ac-white);
     display: flex;
     justify-content: center;
 }
@@ -151,8 +164,8 @@ html, body {
 }
 
 .progress-bar {
-    background: #4C3B33;
-    border-radius: 25%;
+    background: var(--ac-brown);
+    /*border-radius: 25%;*/
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.75vh;
@@ -163,7 +176,7 @@ html, body {
 }
 
 .filler {
-    background: #53BCAE;
+    background: var(--ac-cyan);
     height: 100%;
     border-radius: inherit;
     transition: width .2s ease-in;
@@ -194,7 +207,7 @@ html, body {
   font-size: 2vh;
   text-align: center;
   border-radius: 1vh;
-  background: #3b3e7a;
+  background: var(--ac-pink);
   margin: auto 1.5vw;
 }
 
@@ -210,7 +223,7 @@ html, body {
 }
 
 .key-log {
-  background: #3b3e7a;
+  background: var(--ac-orange);
   border-radius: 1vh;
   display: flex;
   flex-flow: row nowrap;
@@ -219,7 +232,7 @@ html, body {
 }
 
 .key-log-cell {
-    color: #F5F7E1;
+    color: var(--ac-white);
     width: 33%;
 }
 
@@ -232,9 +245,9 @@ html, body {
 }
 
 .player-button {
-    background-color: #F8FDE6;
+    background-color: var(--ac-white);
     border: none;
-    color: #8C7D68;
+    color: var(--ac-lbrown);
     font-weight: bold;
     width: 8vh;
     height: 8vh;
@@ -249,8 +262,8 @@ html, body {
 }
 
 .info-button {
-  background-color: #F8FDE6;
-  color: #8C7D68;
+  background-color: var(--ac-white);
+  color: var(--ac-lbrown);
   width: 100%;
   height: 3vh;
   border: none;
@@ -302,10 +315,10 @@ html, body {
 }
 
 .text-box {
-  background-color: #F7F4E5;
+  background-color: var(--ac-white);
   width: 70%;
   height: max-content;
   padding: 5% 5%;
-  color: #737061;
+  color: var(--ac-brown);
   overflow: hidden;
 }
