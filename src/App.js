@@ -45,7 +45,7 @@ function generateButtonPress(button, onTime, offTime, count) {
 	];
 }
 
-function generateJoystickPush(side, onTime, offTime, strength, angle) {
+/*function generateJoystickPush(side, onTime, offTime, strength, angle) {
 	if(side !== "left" && side !== "right") return [];
 
 	return [
@@ -65,6 +65,7 @@ function generateJoystickPush(side, onTime, offTime, strength, angle) {
 		}
 	];
 }
+*/
 
 //
 // - React Components
@@ -1597,6 +1598,7 @@ class EggHatcherMacroBuilder extends MacroBuilder {
 	}
 }
 */
+
 class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
 		super(jsonM, "Crafting", "./images/wonderbox_icon.png");
