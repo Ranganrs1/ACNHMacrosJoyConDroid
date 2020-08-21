@@ -1,5 +1,5 @@
 {
-  "name": "poke-macros-joycondroid",
+  "name": "acnh-macros-joycondroid",
   "version": "1.1.4",
   "private": true,
   "dependencies": {
@@ -33,7 +33,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://ghoster23.github.io/PokemonMacrosJoyConDroid/",
+  "homepage": "https://Ranganrs1.github.io/ACNHMacrosJoyConDroid/",
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }
