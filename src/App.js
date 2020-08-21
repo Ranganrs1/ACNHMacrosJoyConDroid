@@ -2636,7 +2636,7 @@ class App extends Component {
 		const current = this.macroPlayer.state.playState;
 
 		return (
-			<div className = "App" style = {{backgroundImage: "url(./images/background.png)"}}>
+			<div className = "App" style = {{background: "#F7F3E7"}}>
 				<div className = "App-header">
 					<img className = "icon" src = "./images/macro_app_icon.png" alt = "AppIcon"/>
 					<b className = "App-title"
