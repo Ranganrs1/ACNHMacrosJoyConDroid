@@ -2640,7 +2640,7 @@ class App extends Component {
 				<div className = "App-header">
 					<img className = "icon" src = "./images/macro_app_icon.png" alt = "AppIcon"/>
 					<b className = "App-title"
-						style = {{color: "black"}}> POKÉMACROS </b>
+						style = {{color: "#FFCF25"}}> ANIMACROSSING </b>
 				</div>
 				<div id = "body">
 					<div id = "Macros">
