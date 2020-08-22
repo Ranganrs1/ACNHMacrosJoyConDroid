@@ -1271,6 +1271,8 @@ class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
 		super(jsonM, "Crafting", "./images/DIYIcon.png");
 
+		this.loopMode = true;
+
 		this.parameters.count = 1;
 
 		this.onCountChange = this.onCountChange.bind(this);
@@ -1324,7 +1326,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 			this.concatToMacro(this.getMacro("Crafting"));
 		}
 
-		this.macro = new Macro(this.name, this.icon, this.macroJSON);
+		this.macro = new Macro(this.name, this.icon, this.macroJSON, this.loopMode);
 
 		return this.macro;
 	}
@@ -1335,9 +1337,16 @@ class CraftingMacroBuilder extends MacroBuilder {
 //
 
 class Macro {
-	constructor(name, icon, segments) {
+	constructor(name, icon, segments, loopMode) {
 		this.name = name;
 		this.icon = icon;
+
+		//Looping mode is optional. Only use with macros with one segment.
+		if(loopMode === true) {
+			this.loopMode = true;
+		} else {
+			this.loopMode = false;
+		}
 
 		this.state = MacroStates.INACTIVE;
 
@@ -1453,10 +1462,14 @@ class Macro {
 								if(info.abort) return;
 								this.state = info.state;
 							}
-
+							
 							this.currentOverallStep++;
 						}
 					}
+				
+				if (this.loopMode && j === (reps-1)) {
+					j = 0;
+				}
 				}
 			}
 			return;
