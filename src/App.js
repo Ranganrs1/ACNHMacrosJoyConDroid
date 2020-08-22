@@ -1383,6 +1383,8 @@ class Macro {
 	progress() {
 		if(this.totalSteps === 0) return 1;
 
+		if(this.loopMode) return 1;
+		
 		return this.currentOverallStep / this.totalSteps;
 	}
 
