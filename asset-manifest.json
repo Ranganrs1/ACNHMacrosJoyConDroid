@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ACNHMacrosJoyConDroid/static/css/main.53f8b2c5.chunk.css",
-    "main.js": "/ACNHMacrosJoyConDroid/static/js/main.f1446cf2.chunk.js",
-    "main.js.map": "/ACNHMacrosJoyConDroid/static/js/main.f1446cf2.chunk.js.map",
+    "main.js": "/ACNHMacrosJoyConDroid/static/js/main.a201d4a5.chunk.js",
+    "main.js.map": "/ACNHMacrosJoyConDroid/static/js/main.a201d4a5.chunk.js.map",
     "runtime-main.js": "/ACNHMacrosJoyConDroid/static/js/runtime-main.f208a6e7.js",
     "runtime-main.js.map": "/ACNHMacrosJoyConDroid/static/js/runtime-main.f208a6e7.js.map",
     "static/js/2.852cfc9a.chunk.js": "/ACNHMacrosJoyConDroid/static/js/2.852cfc9a.chunk.js",
     "static/js/2.852cfc9a.chunk.js.map": "/ACNHMacrosJoyConDroid/static/js/2.852cfc9a.chunk.js.map",
     "index.html": "/ACNHMacrosJoyConDroid/index.html",
-    "precache-manifest.f26689a89d6b01165197a6d0374fd767.js": "/ACNHMacrosJoyConDroid/precache-manifest.f26689a89d6b01165197a6d0374fd767.js",
+    "precache-manifest.e63b068f779647747973431056ca7fbd.js": "/ACNHMacrosJoyConDroid/precache-manifest.e63b068f779647747973431056ca7fbd.js",
     "service-worker.js": "/ACNHMacrosJoyConDroid/service-worker.js",
     "static/css/main.53f8b2c5.chunk.css.map": "/ACNHMacrosJoyConDroid/static/css/main.53f8b2c5.chunk.css.map",
     "static/js/2.852cfc9a.chunk.js.LICENSE.txt": "/ACNHMacrosJoyConDroid/static/js/2.852cfc9a.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f208a6e7.js",
     "static/js/2.852cfc9a.chunk.js",
     "static/css/main.53f8b2c5.chunk.css",
-    "static/js/main.f1446cf2.chunk.js"
+    "static/js/main.a201d4a5.chunk.js"
   ]
 }

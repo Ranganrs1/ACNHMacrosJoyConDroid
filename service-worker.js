@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ACNHMacrosJoyConDroid/precache-manifest.f26689a89d6b01165197a6d0374fd767.js"
+  "/ACNHMacrosJoyConDroid/precache-manifest.e63b068f779647747973431056ca7fbd.js"
 );
 
 self.addEventListener('message', (event) => {
