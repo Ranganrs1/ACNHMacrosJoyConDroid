@@ -72,7 +72,7 @@ html, body {
 }
 
 .macro-button {
-    background-color: var(--ac-white);
+    /*background-color: var(--ac-white);*/
     color: var(--ac-lbrown);
     width: 8vh;
     height: 8vh;
