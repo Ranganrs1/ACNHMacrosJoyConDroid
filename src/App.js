@@ -1467,7 +1467,7 @@ class Macro {
 						}
 					}
 				
-				if (this.loopMode && j === (reps-1)) {
+				if (this.loopMode) {
 					j = 0;
 				}
 				}
