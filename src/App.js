@@ -1468,7 +1468,7 @@ class Macro {
 					}
 				
 				if (this.loopMode) {
-					j = 0;
+					j--;
 				}
 				}
 			}
