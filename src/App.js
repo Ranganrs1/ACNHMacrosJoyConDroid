@@ -1269,14 +1269,14 @@ class MacroBuilder {
 
 class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
-		super(jsonM, "Crafting", "./images/wonderbox_icon.png");
+		super(jsonM, "Crafting", "./images/DIYIcon.png");
 
-		this.parameters.count    = 1;
+		this.parameters.count = 1;
 
-		this.onCountChange    = this.onCountChange.bind(this);
+		this.onCountChange = this.onCountChange.bind(this);
 
 		this.paramHandlers = {
-			count  : this.onCountChange,
+			count: this.onCountChange,
 		};
 
 		var text1 = (
@@ -2237,11 +2237,9 @@ class App extends Component {
 		const current = this.macroPlayer.state.playState;
 
 		return (
-			<div className = "App" style = {{background: "#F7F3E7"}}>
+			<div className = "App">
 				<div className = "App-header">
-					<img className = "icon" src = "./images/macro_app_icon.png" alt = "AppIcon"/>
-					<b className = "App-title"
-						style = {{color: "#FFCF25"}}> AniMacrosSing </b>
+					<img className = "icon" src = "./images/macros.png" alt = "AppTitle"/>
 				</div>
 				<div id = "body">
 					<div id = "Macros">
@@ -2262,9 +2260,9 @@ class App extends Component {
 						<PlayerButton id = "ResetButton" selected = {current === MacroStates.INACTIVE} name = "Reset"
 							src = "./images/reset_icon.png" clickHandler = {e => this.onButtonEvent("reset")}/>
 						<PlayerButton id = "PlayButton" selected = {current === MacroStates.PLAYING} name = "Play"
-							src = "./images/play_icon.png" clickHandler = {e => this.onButtonEvent("play")}/>
+							src = "./images/ACStylePlayIcon.png" clickHandler = {e => this.onButtonEvent("play")}/>
 						<PlayerButton id = "PauseButton" selected = {current === MacroStates.PAUSED} name = "Pause"
-							src = "./images/pause_icon.png" clickHandler = {e => this.onButtonEvent("pause")}/>
+							src = "./images/ACStylePauseIcon.png" clickHandler = {e => this.onButtonEvent("pause")}/>
 					</div>
 				</div>
 			</div>
