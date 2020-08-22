@@ -72,16 +72,16 @@ async function LoadJson(path) {
 //
 
 function PlayerButton(props) {
-	var divStyle = { background : "#FFF" };
+	//var divStyle = { background : "#FFF" };
 	var iconStyle = {};
 
 	if(props.selected) {
-		divStyle  = { background : "#000" };
-		iconStyle = { filter : "invert(1)" };
+		//divStyle  = { background : "#000" };
+		iconStyle = { filter : "brightness(70%)" };
 	}
 
 	return (
-		<div className = "player-button" id = {props.name} style = {divStyle}
+		<div className = "player-button" id = {props.name}/* style = {divStyle}*/
 			onClick = {e => props.clickHandler()} >
 			<img className = "icon" src = {props.src} alt = {props.name + " Button Icon"}
 				style = {iconStyle} />
@@ -90,12 +90,12 @@ function PlayerButton(props) {
 }
 
 function MacroButton(props) {
-	var style = { background : "white" };
-	if(props.selected) style = {background : "black"};
+	var iconStyle = {};
+	if(props.selected) iconStyle = { filter : "brightness(70%)" };
 
 	return (
 		<div className = "macro">
-			<div className = "macro-button" id = {props.name} style = {style}
+			<div className = "macro-button" id = {props.name} style = {iconStyle}
 				onClick = {e => props.clickHandler(props.index)}>
 				<img className = "icon" src = {props.src} alt = {"Icon " + props.name}/>
 			</div>
@@ -1384,7 +1384,7 @@ class Macro {
 		if(this.totalSteps === 0) return 1;
 
 		if(this.loopMode) return 1;
-		
+
 		return this.currentOverallStep / this.totalSteps;
 	}
 
