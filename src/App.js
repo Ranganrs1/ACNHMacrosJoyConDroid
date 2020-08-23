@@ -413,6 +413,33 @@ class InfoOverlay extends React.Component {
 	}
 }
 
+class AboutOverlay extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {};
+	}
+
+	render() {
+		var display_style = {display : "none"};
+		if(this.props.show) display_style.display = "flex";
+			
+		return (
+			<div id = "infoOverlay" className = "info-overlay" style = {display_style}>
+				<div id = "infoOverlayOut" onMouseDown  = {this.props.onMouseDown} onTouchStart = {this.props.onTouchStart}>
+				</div>
+				<div id = "infoTextBox" className = "text-box">
+					<h2 className = "infoSectionTitle"> Credits </h2>
+					ACNHMacros UI and macros written by Ranga Rutiser Sundar
+					Thanks to Ghoster23 for creating the Pokémacros UI; they really did most of the work!
+					<a href="https://github.com/Ranganrs1/ACNHMacrosJoyConDroid">GitHub for this project</a>
+					<a href="https://github.com/Ghoster23/PokemonMacrosJoyConDroid">Github for Pokémacros </a>
+				</div>
+			</div>
+		);
+	}
+}
+
 //
 // - Back End Elements
 //
@@ -2077,6 +2104,11 @@ class App extends Component {
 				let pressed = !this.state.displayInfo;
 				this.setState({displayInfo: pressed});
 			break;
+
+			case "about":
+				let aboutpressed = !this.state.displayInfo;
+				this.setState({displayInfo: aboutpressed});
+			break
 		}
 
 		this.setState(this.macroPlayer.getMacroState());
@@ -2237,6 +2269,10 @@ class App extends Component {
 					title = {name} sections = {info}
 					onMouseDown  = {e => this.onButtonEvent("info", false)}
 					onTouchStart = {e => this.onButtonEvent("info", false)}/>
+
+				<AboutOverlay show = {this.state.displayInfo}
+					onMouseDown  = {e => this.onButtonEvent("about", false)}
+					onTouchStart = {e => this.onButtonEvent("about", false)}/>
 			</div>
 		);
 	}
@@ -2255,6 +2291,8 @@ class App extends Component {
 			<div className = "App">
 				<div className = "App-header">
 					<img className = "icon" src = "./images/macros.png" alt = "AppTitle"/>
+					<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"
+						src = "./images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
 				</div>
 				<div id = "body">
 					<div id = "Macros">
