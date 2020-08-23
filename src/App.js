@@ -425,7 +425,7 @@ class AboutOverlay extends React.Component {
 		if(this.props.show) display_style.display = "flex";
 			
 		return (
-			<div id = "infoOverlay" className = "info-overlay" style = {display_style}>
+			<div id = "aboutOverlay" className = "about-overlay" style = {display_style}>
 				<div id = "infoOverlayOut" onMouseDown  = {this.props.onMouseDown} onTouchStart = {this.props.onTouchStart}>
 				</div>
 				<div id = "infoTextBox" className = "text-box">
