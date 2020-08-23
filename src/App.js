@@ -2291,8 +2291,7 @@ class App extends Component {
 			<div className = "App">
 				<div className = "App-header">
 					<img className = "icon" src = "./images/macros.png" alt = "AppTitle"/>
-					<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"
-						src = "./images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
+					
 				</div>
 				<div id = "body">
 					<div id = "Macros">
@@ -2310,6 +2309,8 @@ class App extends Component {
 						</div>
 					</div>
 					<div id = "PlayerButtons">
+						<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"
+							src = "./images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
 						<PlayerButton id = "ResetButton" selected = {current === MacroStates.INACTIVE} name = "Reset"
 							src = "./images/reset_icon.png" clickHandler = {e => this.onButtonEvent("reset")}/>
 						<PlayerButton id = "PlayButton" selected = {current === MacroStates.PLAYING} name = "Play"
