@@ -2106,8 +2106,8 @@ class App extends Component {
 			break;
 
 			case "about":
-				let aboutpressed = !this.state.displayInfo;
-				this.setState({displayInfo: aboutpressed});
+				let aboutPressed = !this.state.displayInfo;
+				this.setState({displayAbout: aboutPressed});
 			break
 		}
 
@@ -2270,7 +2270,7 @@ class App extends Component {
 					onMouseDown  = {e => this.onButtonEvent("info", false)}
 					onTouchStart = {e => this.onButtonEvent("info", false)}/>
 
-				<AboutOverlay show = {this.state.displayInfo}
+				<AboutOverlay show = {this.state.displayAbout}
 					onMouseDown  = {e => this.onButtonEvent("about", false)}
 					onTouchStart = {e => this.onButtonEvent("about", false)}/>
 			</div>
