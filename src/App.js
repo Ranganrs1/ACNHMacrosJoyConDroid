@@ -429,7 +429,7 @@ class AboutOverlay extends React.Component {
 				<div id = "infoOverlayOut" onMouseDown  = {this.props.onMouseDown} onTouchStart = {this.props.onTouchStart}>
 				</div>
 				<div id = "infoTextBox" className = "text-box">
-					<h2 className = "infoSectionTitle"> Credits (Version 1)</h2>
+					<h2 className = "infoSectionTitle"> Credits (Version 1.0.1)</h2>
 					ACNHMacros UI and macros written by Ranga Rutiser Sundar. 
 					Thanks to Ghoster23 for creating the Pokémacros UI; they really did most of the work!
 					<div><a href="https://github.com/Ranganrs1/ACNHMacrosJoyConDroid">GitHub for this project</a></div>
