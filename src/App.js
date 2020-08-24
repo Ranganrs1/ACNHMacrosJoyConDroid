@@ -1296,7 +1296,7 @@ class MacroBuilder {
 
 class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
-		super(jsonM, "Crafting", "./images/DIYIcon.png");
+		super(jsonM, "Crafting", "%PUBLIC_URL%/images/DIYIcon.png");
 
 		this.loopMode = true;
 
@@ -2290,7 +2290,7 @@ class App extends Component {
 		return (
 			<div className = "App">
 				<div className = "App-header">
-					<img className = "icon" src = "./images/macros.png" alt = "AppTitle"/>
+					<img className = "icon" src = "%PUBLIC_URL%/images/macros.png" alt = "AppTitle"/>
 					
 				</div>
 				<div id = "body">
@@ -2310,13 +2310,13 @@ class App extends Component {
 					</div>
 					<div id = "PlayerButtons">
 						<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"
-							src = "./images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
+							src = "%PUBLIC_URL%/images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
 						<PlayerButton id = "ResetButton" selected = {current === MacroStates.INACTIVE} name = "Reset"
-							src = "./images/reset_icon.png" clickHandler = {e => this.onButtonEvent("reset")}/>
+							src = "%PUBLIC_URL%/images/reset_icon.png" clickHandler = {e => this.onButtonEvent("reset")}/>
 						<PlayerButton id = "PlayButton" selected = {current === MacroStates.PLAYING} name = "Play"
-							src = "./images/ACStylePlayIcon.png" clickHandler = {e => this.onButtonEvent("play")}/>
+							src = "%PUBLIC_URL%/images/ACStylePlayIcon.png" clickHandler = {e => this.onButtonEvent("play")}/>
 						<PlayerButton id = "PauseButton" selected = {current === MacroStates.PAUSED} name = "Pause"
-							src = "./images/ACStylePauseIcon.png" clickHandler = {e => this.onButtonEvent("pause")}/>
+							src = "%PUBLIC_URL%/images/ACStylePauseIcon.png" clickHandler = {e => this.onButtonEvent("pause")}/>
 					</div>
 				</div>
 			</div>
