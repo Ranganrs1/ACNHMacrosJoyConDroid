@@ -1296,7 +1296,7 @@ class MacroBuilder {
 
 class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
-		super(jsonM, "Crafting", "%PUBLIC_URL%/images/DIYIcon.png");
+		super(jsonM, "Crafting", (process.env.PUBLIC_URL + "/images/DIYIcon.png"));
 
 		this.loopMode = true;
 
@@ -2290,7 +2290,7 @@ class App extends Component {
 		return (
 			<div className = "App">
 				<div className = "App-header">
-					<img className = "icon" src = "%PUBLIC_URL%/images/macros.png" alt = "AppTitle"/>
+					<img className = "icon" src = {process.env.PUBLIC_URL + "/images/macros.png"} alt = "AppTitle"/>
 					
 				</div>
 				<div id = "body">
@@ -2310,13 +2310,13 @@ class App extends Component {
 					</div>
 					<div id = "PlayerButtons">
 						<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"
-							src = "%PUBLIC_URL%/images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
+							src = {process.env.PUBLIC_URL + "/images/aboutPlaceholder.png"} clickHandler = {e => this.onButtonEvent("about")}/>
 						<PlayerButton id = "ResetButton" selected = {current === MacroStates.INACTIVE} name = "Reset"
-							src = "%PUBLIC_URL%/images/reset_icon.png" clickHandler = {e => this.onButtonEvent("reset")}/>
+							src = {process.env.PUBLIC_URL + "/images/reset_icon.png"} clickHandler = {e => this.onButtonEvent("reset")}/>
 						<PlayerButton id = "PlayButton" selected = {current === MacroStates.PLAYING} name = "Play"
-							src = "%PUBLIC_URL%/images/ACStylePlayIcon.png" clickHandler = {e => this.onButtonEvent("play")}/>
+							src = {process.env.PUBLIC_URL + "/images/ACStylePlayIcon.png"} clickHandler = {e => this.onButtonEvent("play")}/>
 						<PlayerButton id = "PauseButton" selected = {current === MacroStates.PAUSED} name = "Pause"
-							src = "%PUBLIC_URL%/images/ACStylePauseIcon.png" clickHandler = {e => this.onButtonEvent("pause")}/>
+							src = {process.env.PUBLIC_URL + "/images/ACStylePauseIcon.png"} clickHandler = {e => this.onButtonEvent("pause")}/>
 					</div>
 				</div>
 			</div>
