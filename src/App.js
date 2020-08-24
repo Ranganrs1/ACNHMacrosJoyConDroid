@@ -425,11 +425,11 @@ class AboutOverlay extends React.Component {
 		if(this.props.show) display_style.display = "flex";
 			
 		return (
-			<div id = "infoOverlay" className = "info-overlay" style = {display_style}>
+			<div id = "aboutOverlay" className = "about-overlay" style = {display_style}>
 				<div id = "infoOverlayOut" onMouseDown  = {this.props.onMouseDown} onTouchStart = {this.props.onTouchStart}>
 				</div>
 				<div id = "infoTextBox" className = "text-box">
-					<h2 className = "infoSectionTitle"> Credits (Version 1)</h2>
+					<h2 className = "infoSectionTitle"> Credits (Version 1.0.1)</h2>
 					ACNHMacros UI and macros written by Ranga Rutiser Sundar. 
 					Thanks to Ghoster23 for creating the Pokémacros UI; they really did most of the work!
 					<div><a href="https://github.com/Ranganrs1/ACNHMacrosJoyConDroid">GitHub for this project</a></div>
@@ -491,7 +491,7 @@ class JSONManager {
 	async loadMacro(key) {
 		var segment = this.segments[key];
 
-		segment.object = await LoadJson("./macros/" + segment.filename);
+		segment.object = await LoadJson(process.env.PUBLIC_URL + "/macros/" + segment.filename);
 
 		this.loadedCount += 1;
 
@@ -1296,7 +1296,7 @@ class MacroBuilder {
 
 class CraftingMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
-		super(jsonM, "Crafting", "./images/DIYIcon.png");
+		super(jsonM, "Crafting", (process.env.PUBLIC_URL + "/images/DIYIcon.png"));
 
 		this.loopMode = true;
 
@@ -2106,8 +2106,8 @@ class App extends Component {
 			break;
 
 			case "about":
-				let aboutpressed = !this.state.displayInfo;
-				this.setState({displayInfo: aboutpressed});
+				let aboutPressed = !this.state.displayInfo;
+				this.setState({displayAbout: aboutPressed});
 			break
 		}
 
@@ -2270,7 +2270,7 @@ class App extends Component {
 					onMouseDown  = {e => this.onButtonEvent("info", false)}
 					onTouchStart = {e => this.onButtonEvent("info", false)}/>
 
-				<AboutOverlay show = {this.state.displayInfo}
+				<AboutOverlay show = {this.state.displayAbout}
 					onMouseDown  = {e => this.onButtonEvent("about", false)}
 					onTouchStart = {e => this.onButtonEvent("about", false)}/>
 			</div>
@@ -2290,7 +2290,7 @@ class App extends Component {
 		return (
 			<div className = "App">
 				<div className = "App-header">
-					<img className = "icon" src = "./images/macros.png" alt = "AppTitle"/>
+					<img className = "icon" src = {process.env.PUBLIC_URL + "/images/macros.png"} alt = "AppTitle"/>
 					
 				</div>
 				<div id = "body">
@@ -2310,13 +2310,13 @@ class App extends Component {
 					</div>
 					<div id = "PlayerButtons">
 						<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"
-							src = "./images/aboutPlaceholder.png" clickHandler = {e => this.onButtonEvent("about")}/>
+							src = {process.env.PUBLIC_URL + "/images/aboutPlaceholder.png"} clickHandler = {e => this.onButtonEvent("about")}/>
 						<PlayerButton id = "ResetButton" selected = {current === MacroStates.INACTIVE} name = "Reset"
-							src = "./images/reset_icon.png" clickHandler = {e => this.onButtonEvent("reset")}/>
+							src = {process.env.PUBLIC_URL + "/images/reset_icon.png"} clickHandler = {e => this.onButtonEvent("reset")}/>
 						<PlayerButton id = "PlayButton" selected = {current === MacroStates.PLAYING} name = "Play"
-							src = "./images/ACStylePlayIcon.png" clickHandler = {e => this.onButtonEvent("play")}/>
+							src = {process.env.PUBLIC_URL + "/images/ACStylePlayIcon.png"} clickHandler = {e => this.onButtonEvent("play")}/>
 						<PlayerButton id = "PauseButton" selected = {current === MacroStates.PAUSED} name = "Pause"
-							src = "./images/ACStylePauseIcon.png" clickHandler = {e => this.onButtonEvent("pause")}/>
+							src = {process.env.PUBLIC_URL + "/images/ACStylePauseIcon.png"} clickHandler = {e => this.onButtonEvent("pause")}/>
 					</div>
 				</div>
 			</div>
