@@ -491,7 +491,7 @@ class JSONManager {
 	async loadMacro(key) {
 		var segment = this.segments[key];
 
-		segment.object = await LoadJson("/macros/" + segment.filename);
+		segment.object = await LoadJson(process.env.PUBLIC_URL + "/macros/" + segment.filename);
 
 		this.loadedCount += 1;
 
