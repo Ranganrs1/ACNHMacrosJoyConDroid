@@ -2291,8 +2291,12 @@ class App extends Component {
 			<div className = "App">
 				<div className = "App-header">
 					<img className = "icon" src = {process.env.PUBLIC_URL + "/images/macros.png"} alt = "AppTitle"/>
-					
 				</div>
+				<div className = "progBar">
+					<ProgressBar key = "progressbar" percentage = {this.state.macroProgress} />
+				</div>
+				
+				
 				<div id = "body">
 					<div id = "Macros">
 						{macros}
@@ -2301,12 +2305,9 @@ class App extends Component {
 						{parameters}
 						{info}
 					</div>
-					<div id = "Tracker">
-						<ProgressBar key = "progressbar" percentage = {this.state.macroProgress} />
-						<div id = "KeyLogging">
-							{pressed}
-							{logging}
-						</div>
+					<div id = "KeyLogging">
+						{pressed}
+						{logging}
 					</div>
 					<div id = "PlayerButtons">
 						<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"

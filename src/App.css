@@ -9,6 +9,8 @@
   --ac-brown: #645140; /*Custom design editor icons*/
   --ac-pink: #fcbfc6; /*Custom design editor pink*/
   --ac-orange: #e59469; /*diy recipe icon orange*/
+  --ac-green: #39cf1b; /*leaf icon light green*/
+  --ac-midgreen: #167438; /*leaf icon mid green*/
 }
 
 html, body {
@@ -31,13 +33,23 @@ html, body {
 .App-header {
   width: 100vw;
   height: 10vh;
+  z-index: 0;
   font-size: 6vh;
+  background-color: var(--ac-midgreen);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
+  border-bottom-left-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
 }
 
+.headerBG {
+  width: inherit;
+  height: inherit;
+  fill: var(--ac-midgreen);
+  z-index: 1;
+}
 .App-title {
   padding: 1vw 1vh;
 }
@@ -164,15 +176,21 @@ html, body {
   flex-shrink: 0;
 }
 
+.progBar {
+  margin-top: 0;
+  z-index: -1;
+}
+
 .progress-bar {
     background: var(--ac-brown);
     /*border-radius: 25%;*/
     margin-left: auto;
     margin-right: auto;
-    margin-top: 2.75vh;
+    margin-top: -5vh;
     margin-bottom: 2.75vh;
     height: 5vh;
-    width: 80vw;
+    width: 100%;
+    z-index: -1;
     flex-shrink: 0;
 }
 
