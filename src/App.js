@@ -1383,7 +1383,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 
 class NMTIslMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
-		super(jsonM, "NMTIsl", (process.env.PUBLIC_URL + "/images/PlaneTicket.png"));
+		super(jsonM, "NMT Island", (process.env.PUBLIC_URL + "/images/PlaneTicket.png"));
 
 		this.loopMode = false;
 
