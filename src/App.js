@@ -515,7 +515,8 @@ class JSONManager {
 			EndWonder    : {filename: "ConcludeWonderTrade.json", object: ""},
 			Hatching     : {filename: "Hatching.json",            object: ""},
 			Crafting	 : {filename: "Crafting.json",			  object: ""},
-			NMTIsl       : {filename: "NMTIsl.json",              object: ""}
+			NMTIsl       : {filename: "NMTIsl.json",              object: ""},
+			TreeShake    : {filename: "TreeShake.json",           object: ""}
 		};
 
 		var entries = Object.entries(this.segments);
@@ -1381,6 +1382,51 @@ class CraftingMacroBuilder extends MacroBuilder {
 	}
 }
 
+class TreeShakeMacroBuilder extends MacroBuilder {
+	constructor(jsonM) {
+		super(jsonM, "Tree Shaker", (process.env.PUBLIC_URL + "/images/PltOak.png"));
+
+		this.loopMode = true;
+
+		var text1 = (
+			<p>
+				Presses A and Y repeatedly to shake trees and get branches
+			</p>
+		);
+
+		var text2 = (
+			<p>
+				Stand south of a tree and start, once five branches have fallen it'll start working. Check for wasps first!
+			</p>
+		);
+
+		this.info = [
+			{
+				title: "Description",
+				text: text1
+			},
+			{
+				title: "How to Use",
+				text: text2
+			}
+		];
+	}
+
+	// Build Macro	
+	build() {
+		if(!this.jsonManager.loadConcluded) return null;
+
+		this.macroJSON = []; // Clear Macro JSON
+
+
+		this.concatToMacro(this.getMacro("TreeShake"));
+
+		this.macro = new Macro(this.name, this.icon, this.macroJSON, this.loopMode);
+
+		return this.macro;
+	}
+}
+
 class NMTIslMacroBuilder extends MacroBuilder {
 	constructor(jsonM) {
 		super(jsonM, "NMT Island", (process.env.PUBLIC_URL + "/images/PlaneTicket.png"));
@@ -1389,13 +1435,13 @@ class NMTIslMacroBuilder extends MacroBuilder {
 
 		var text1 = (
 			<p>
-				Skips Wilbur's dialogue to get you to a Nook Miles Ticket island faster
+				Skips Orville's dialogue to get you to a Nook Miles Ticket island faster
 			</p>
 		);
 
 		var text2 = (
 			<p>
-				Stand in front of Wilbur (don't talk to him!) and initiate the script. Make sure you have at least one Nook Miles Ticket in your Pocket.
+				Stand in front of Orville (don't talk to him!) and initiate the script. Make sure you have at least one Nook Miles Ticket in your Pocket.
 			</p>
 		);
 
@@ -1649,7 +1695,8 @@ class MacroPlayer {
 		//this.builders[0] = new TimeSkipMacroBuilder(this.jsonManager);
 		//this.builders[1] = new LotoIDMacroBuilder(this.jsonManager);
 		this.builders[0] = new CraftingMacroBuilder(this.jsonManager);
-		this.builders[1] = new NMTIslMacroBuilder(this.jsonManager);
+		this.builders[1] = new TreeShakeMacroBuilder(this.jsonManager);
+		this.builders[2] = new NMTIslMacroBuilder(this.jsonManager);
 		//this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
 
 		let macroCount = this.builders.length;
@@ -2085,7 +2132,8 @@ class App extends Component {
 		this.state = {selectedMacro :  0,
 					  macroState    : -1,
 					  macroProgress :  0,
-						displayInfo   : false
+						displayInfo   : false,
+						displayAbout  : false
 		};
 	}
 
@@ -2173,7 +2221,7 @@ class App extends Component {
 			break;
 
 			case "about":
-				let aboutPressed = !this.state.displayInfo;
+				let aboutPressed = !this.state.displayAbout;
 				this.setState({displayAbout: aboutPressed});
 			break
 		}
