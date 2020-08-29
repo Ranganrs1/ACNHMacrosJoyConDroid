@@ -2132,7 +2132,8 @@ class App extends Component {
 		this.state = {selectedMacro :  0,
 					  macroState    : -1,
 					  macroProgress :  0,
-						displayInfo   : false
+						displayInfo   : false,
+						displayAbout  : false
 		};
 	}
 
@@ -2220,7 +2221,7 @@ class App extends Component {
 			break;
 
 			case "about":
-				let aboutPressed = !this.state.displayInfo;
+				let aboutPressed = !this.state.displayAbout;
 				this.setState({displayAbout: aboutPressed});
 			break
 		}
