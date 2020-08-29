@@ -67,6 +67,47 @@ async function LoadJson(path) {
 }
 */
 
+/*function parseDodoCode(rawCode) {
+	//sanity check: Dodo Codes must be five characters long
+	if (rawCode.length !== 5) {
+		return null;
+	}
+	
+	var code = rawCode.toLowerCase();
+	
+	var keyboardMap = [
+		["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-"],
+		["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "/"],
+		["a", "s", "d", "f", "g", "h", "j", "k", "l", ":", "'"],
+		["z", "x", "c", "v", "b", "n", "m", ",", ".", "?", "!"]
+	]
+	
+	var dodoChars = code.split("");
+
+	//the "keyboard coordinates of each of the characters in x, y with 0,0 being 1; 1,0 being 2, etc."
+	var dodoKbdCoords = [[0,0],[0,0],[0,0],[0,0],[0,0]];
+
+	//turn our Dodo Code characters into something we can navigate through: coordinates on the Animal Crossing keyboard.
+	for(var i = 0; i < dodoChars.length; i++) {
+		//sanity check: dodo codes may not have i, o, or z in them
+		if(dodoChars[i] === "i" || dodoChars[i] === "o" || dodoChars[i] === "z") {
+			return null;
+
+		} else {
+			var currentChar = dodoChars[i];
+			for(var j = 0; j < keyboardMap.length; j++) {
+				for(var k = 0; k < keyboardMap[k]; k++) {
+					if(keyboardMap[j][k] === currentChar) {
+						dodoKbdCoords[i] = [j,k];
+					}
+				}
+			}
+		}
+	}
+
+	
+
+}*/
 //
 // - React Components
 //
@@ -473,7 +514,8 @@ class JSONManager {
 			StartWonder  : {filename: "StartWonderTrade.json",    object: ""},
 			EndWonder    : {filename: "ConcludeWonderTrade.json", object: ""},
 			Hatching     : {filename: "Hatching.json",            object: ""},
-			Crafting	 : {filename: "Crafting.json",			  object: ""}
+			Crafting	 : {filename: "Crafting.json",			  object: ""},
+			NMTIsl       : {filename: "NMTIsl.json",              object: ""}
 		};
 
 		var entries = Object.entries(this.segments);
@@ -1300,14 +1342,6 @@ class CraftingMacroBuilder extends MacroBuilder {
 
 		this.loopMode = true;
 
-		this.parameters.count = 1;
-
-		this.onCountChange = this.onCountChange.bind(this);
-
-		this.paramHandlers = {
-			count: this.onCountChange,
-		};
-
 		var text1 = (
 			<p>
 				Presses A repeatedly to craft items.
@@ -1332,15 +1366,49 @@ class CraftingMacroBuilder extends MacroBuilder {
 		];
 	}
 
-	// Parameter Handlers
-	onCountChange(count) {
-		if(this.parameters.count !== count) {
-			this.parameters.count = count;
+	// Build Macro	
+	build() {
+		if(!this.jsonManager.loadConcluded) return null;
 
-			return true;
-		}
+		this.macroJSON = []; // Clear Macro JSON
 
-		return false;
+
+		this.concatToMacro(this.getMacro("Crafting"));
+
+		this.macro = new Macro(this.name, this.icon, this.macroJSON, this.loopMode);
+
+		return this.macro;
+	}
+}
+
+class NMTIslMacroBuilder extends MacroBuilder {
+	constructor(jsonM) {
+		super(jsonM, "NMT Island", (process.env.PUBLIC_URL + "/images/PlaneTicket.png"));
+
+		this.loopMode = false;
+
+		var text1 = (
+			<p>
+				Skips Wilbur's dialogue to get you to a Nook Miles Ticket island faster
+			</p>
+		);
+
+		var text2 = (
+			<p>
+				Stand in front of Wilbur (don't talk to him!) and initiate the script. Make sure you have at least one Nook Miles Ticket in your Pocket.
+			</p>
+		);
+
+		this.info = [
+			{
+				title: "Description",
+				text: text1
+			},
+			{
+				title: "How to Use",
+				text: text2
+			}
+		];
 	}
 
 	// Build Macro	
@@ -1349,9 +1417,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 
 		this.macroJSON = []; // Clear Macro JSON
 
-		for(var i = 0; i < this.parameters.count; i++) {
-			this.concatToMacro(this.getMacro("Crafting"));
-		}
+		this.concatToMacro(this.getMacro("NMTIsl"));
 
 		this.macro = new Macro(this.name, this.icon, this.macroJSON, this.loopMode);
 
@@ -1583,6 +1649,7 @@ class MacroPlayer {
 		//this.builders[0] = new TimeSkipMacroBuilder(this.jsonManager);
 		//this.builders[1] = new LotoIDMacroBuilder(this.jsonManager);
 		this.builders[0] = new CraftingMacroBuilder(this.jsonManager);
+		this.builders[1] = new NMTIslMacroBuilder(this.jsonManager);
 		//this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
 
 		let macroCount = this.builders.length;
@@ -2291,8 +2358,12 @@ class App extends Component {
 			<div className = "App">
 				<div className = "App-header">
 					<img className = "icon" src = {process.env.PUBLIC_URL + "/images/macros.png"} alt = "AppTitle"/>
-					
 				</div>
+				<div className = "progBar">
+					<ProgressBar key = "progressbar" percentage = {this.state.macroProgress} />
+				</div>
+				
+				
 				<div id = "body">
 					<div id = "Macros">
 						{macros}
@@ -2301,12 +2372,9 @@ class App extends Component {
 						{parameters}
 						{info}
 					</div>
-					<div id = "Tracker">
-						<ProgressBar key = "progressbar" percentage = {this.state.macroProgress} />
-						<div id = "KeyLogging">
-							{pressed}
-							{logging}
-						</div>
+					<div id = "KeyLogging">
+						{pressed}
+						{logging}
 					</div>
 					<div id = "PlayerButtons">
 						<PlayerButton id = "AboutButton" selected = {current === MacroStates.INACTIVE} name = "About"

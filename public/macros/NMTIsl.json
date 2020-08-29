@@ -1,0 +1,87 @@
+[
+    {
+        "name": "NMTIsl",
+        "macro": [
+            {
+                "button"  : "l",
+                "onTime"  : 20000,
+                "offTime" : 0,
+                "count"   : 1,
+                "block"   : false
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 3000,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 800,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 2000,
+                "count"   : 1
+            },
+            {
+                "button"  : "down",
+                "onTime"  : 100,
+                "offTime" : 300,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 300,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
+                "button"  : "b",
+                "onTime"  : 100,
+                "offTime" : 8000,
+                "count"   : 1
+            },
+            {
+                "button"  : "b",
+                "onTime"  : 100,
+                "offTime" : 600,
+                "count"   : 10
+            }
+        ],
+        "count": 1
+    }
+]
