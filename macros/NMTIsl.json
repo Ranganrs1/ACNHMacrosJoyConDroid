@@ -82,6 +82,12 @@
                 "count"   : 1
             },
             {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
                 "button"  : "b",
                 "onTime"  : 100,
                 "offTime" : 8000,
