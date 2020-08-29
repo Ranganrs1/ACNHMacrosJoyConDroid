@@ -514,7 +514,8 @@ class JSONManager {
 			StartWonder  : {filename: "StartWonderTrade.json",    object: ""},
 			EndWonder    : {filename: "ConcludeWonderTrade.json", object: ""},
 			Hatching     : {filename: "Hatching.json",            object: ""},
-			Crafting	 : {filename: "Crafting.json",			  object: ""}
+			Crafting	 : {filename: "Crafting.json",			  object: ""},
+			NMTIsl       : {filename: "NMTIsl.json",              object: ""}
 		};
 
 		var entries = Object.entries(this.segments);
@@ -1341,14 +1342,6 @@ class CraftingMacroBuilder extends MacroBuilder {
 
 		this.loopMode = true;
 
-		this.parameters.count = 1;
-
-		this.onCountChange = this.onCountChange.bind(this);
-
-		this.paramHandlers = {
-			count: this.onCountChange,
-		};
-
 		var text1 = (
 			<p>
 				Presses A repeatedly to craft items.
@@ -1373,15 +1366,49 @@ class CraftingMacroBuilder extends MacroBuilder {
 		];
 	}
 
-	// Parameter Handlers
-	onCountChange(count) {
-		if(this.parameters.count !== count) {
-			this.parameters.count = count;
+	// Build Macro	
+	build() {
+		if(!this.jsonManager.loadConcluded) return null;
 
-			return true;
-		}
+		this.macroJSON = []; // Clear Macro JSON
 
-		return false;
+
+		this.concatToMacro(this.getMacro("Crafting"));
+
+		this.macro = new Macro(this.name, this.icon, this.macroJSON, this.loopMode);
+
+		return this.macro;
+	}
+}
+
+class NMTIslMacroBuilder extends MacroBuilder {
+	constructor(jsonM) {
+		super(jsonM, "NMTIsl", (process.env.PUBLIC_URL + "/images/PlaneTicket.png"));
+
+		this.loopMode = false;
+
+		var text1 = (
+			<p>
+				Skips Wilbur's dialogue to get you to a Nook Miles Ticket island faster
+			</p>
+		);
+
+		var text2 = (
+			<p>
+				Stand in front of Wilbur (don't talk to him!) and initiate the script. Make sure you have at least one Nook Miles Ticket in your Pocket.
+			</p>
+		);
+
+		this.info = [
+			{
+				title: "Description",
+				text: text1
+			},
+			{
+				title: "How to Use",
+				text: text2
+			}
+		];
 	}
 
 	// Build Macro	
@@ -1390,9 +1417,7 @@ class CraftingMacroBuilder extends MacroBuilder {
 
 		this.macroJSON = []; // Clear Macro JSON
 
-		for(var i = 0; i < this.parameters.count; i++) {
-			this.concatToMacro(this.getMacro("Crafting"));
-		}
+		this.concatToMacro(this.getMacro("NMTIsl"));
 
 		this.macro = new Macro(this.name, this.icon, this.macroJSON, this.loopMode);
 
@@ -1624,6 +1649,7 @@ class MacroPlayer {
 		//this.builders[0] = new TimeSkipMacroBuilder(this.jsonManager);
 		//this.builders[1] = new LotoIDMacroBuilder(this.jsonManager);
 		this.builders[0] = new CraftingMacroBuilder(this.jsonManager);
+		this.builders[1] = new NMTIslMacroBuilder(this.jsonManager);
 		//this.builders[3] = new EggHatcherMacroBuilder(this.jsonManager);
 
 		let macroCount = this.builders.length;
