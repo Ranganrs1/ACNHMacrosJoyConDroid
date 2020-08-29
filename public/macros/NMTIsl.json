@@ -12,7 +12,13 @@
             {
                 "button"  : "a",
                 "onTime"  : 100,
-                "offTime" : 4000,
+                "offTime" : 200,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 5000,
                 "count"   : 1
             },
             {
