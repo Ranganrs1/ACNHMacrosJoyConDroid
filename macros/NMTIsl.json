@@ -12,25 +12,7 @@
             {
                 "button"  : "a",
                 "onTime"  : 100,
-                "offTime" : 3000,
-                "count"   : 1
-            },
-            {
-                "button"  : "a",
-                "onTime"  : 100,
-                "offTime" : 1500,
-                "count"   : 1
-            },
-            {
-                "button"  : "a",
-                "onTime"  : 100,
-                "offTime" : 800,
-                "count"   : 1
-            },
-            {
-                "button"  : "a",
-                "onTime"  : 100,
-                "offTime" : 1500,
+                "offTime" : 4000,
                 "count"   : 1
             },
             {
@@ -40,9 +22,27 @@
                 "count"   : 1
             },
             {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1000,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 1500,
+                "count"   : 1
+            },
+            {
+                "button"  : "a",
+                "onTime"  : 100,
+                "offTime" : 3000,
+                "count"   : 1
+            },
+            {
                 "button"  : "down",
                 "onTime"  : 100,
-                "offTime" : 300,
+                "offTime" : 400,
                 "count"   : 1
             },
             {
