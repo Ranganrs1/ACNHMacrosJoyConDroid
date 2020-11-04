@@ -3,13 +3,6 @@
         "name": "Crafting",
         "macro": [
             {
-                "button"  : "l",
-                "onTime"  : 1000,
-                "offTime" : 0,
-                "count"   : 1,
-                "block"   : false
-            },
-            {
                 "button"  : "a",
                 "onTime"  : 100,
                 "offTime" : 50,
