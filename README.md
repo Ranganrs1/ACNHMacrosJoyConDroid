@@ -1,2 +1,2 @@
+This is totally dead at this point, I've been busy with other things. \_(*_*)_/
 Based on github.com/Ghoster23/PokemonMacrosJoyConDroid
-Still in development, but the end result will be a set of macros to automate Animal Crossing: New Horizons' most tedious tasks, if possible. At the moment, it's not all that much.
